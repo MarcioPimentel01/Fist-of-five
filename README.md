@@ -119,4 +119,4 @@ This project not only demonstrates the practical application of these technologi
   * Juan Parra | Slack name: Juan Parra | Github : Parraj1025
   * Marcio Pimentel | Slack name: Marcio Pimentel | Github : MarcioPimentel01
   * Project Github Page: 
-  * Project Github Repo: 
+  * Project Github Repo: https://github.com/MarcioPimentel01/Fist-of-five
