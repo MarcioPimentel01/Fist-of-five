@@ -3,7 +3,7 @@
 
 This project is the second assignment in the Full Stack UCF Bootcamp. The objective of this project is to develop a social media application that initially supports text-based posts and is designed to accommodate NFT-based posts in the future. The app is built using the following technologies and frameworks:
 
-**Backend**: Node.js, Express.js
+**Backend**: Node.js, Express.js, Solidity
 
 <p align="left">
   <!-- Node.js Icon and Link -->
@@ -11,6 +11,9 @@ This project is the second assignment in the Full Stack UCF Bootcamp. The object
     <!-- Express.js Icon and Link -->
   <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer"><img src="https://icongr.am/devicon/express-original.svg?size=123&color=ffffff" width="40" height="40" alt="Express.js" /></a>
   </p>
+  <a href="https://soliditylang.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/color-glass/70/solidity.png" width="40" height="40" alt="Express.js" /></a>
+  </p>
+
 
 **Database**: PostgreSQL with Sequelize ORM
 <p align="left">
