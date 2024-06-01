@@ -123,3 +123,6 @@ This project not only demonstrates the practical application of these technologi
   * Marcio Pimentel | Slack name: Marcio Pimentel | Github : MarcioPimentel01
   * Project Github Page: 
   * Project Github Repo: https://github.com/MarcioPimentel01/Fist-of-five
+
+
+<!-- !Install sequelize with pg (postgres client) and with the pg-hstore package -->
