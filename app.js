@@ -18,6 +18,15 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/auth', authRouter)
 
+//!Route to display an error in case someone tries to access a route that doesn't exist
+app.use('*', (req, res) => {
+    res.status(404).json(
+    {   status: 'error/fail', 
+        message: 'Route not found'
+    }
+    )
+})
+
 const PORT = process.env.APP_PORT || 4000
 
 app.listen(PORT, () => {
