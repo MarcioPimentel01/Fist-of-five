@@ -69,6 +69,7 @@ This project not only demonstrates the practical application of these technologi
 
 * `express` for the web framework
 * `sequelize` for the ORM
+* `nodemon` to automatically restart the server - nmp run start:dev
 * `pg` and `pg-hstore` for PostgreSQL connection
 * `body-parser` for parsing request bodies
 * `dotenv` for environment variables
