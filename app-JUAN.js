@@ -1,60 +1,41 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001;
+const htmlRoutes = require('./public/routes/htmlroutes');
 
-//set environment variables 
-
-//give application access to the public folder for static components of app
-
-app.use(express.static('./public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
+app.use("/", htmlRoutes);
 
-//created logic for a post and storage for the posts
+const posts = [];
 
-const posts = []
-
-class post {
- constructor(username,thoughts){
- this.username = username,
- this.thoughts = thoughts
+class Post {
+    constructor(username, thoughts) {
+        this.username = username;
+        this.thoughts = thoughts;
+    }
 }
 
-//fucntion to create a new post with provided information
-
-}
-const addPosts = (username,thoughts) => {
-    posts.push(new post(username,thoughts))
+const addPost = (username, thoughts) => {
+    posts.push(new Post(username, thoughts));
 }
 
-//show what port it is listening on
 app.listen(PORT, () => {
-console.log(`running on port ${PORT}`)});
-
-//get route for index files
-
-app.get("/",(req,res) => { res.sendFile(`${__dirname}/index.html`)} )
-
-//get route for the posts API
-
-app.get('/api/posts',(req,res) => {
-    res.json(posts)
+    console.log(`Running on port ${PORT}`);
 });
 
-//create logic for deleting posts
+app.get('/api/posts', (req, res) => {
+    res.json(posts);
+});
 
-app.delete('/',(req,res) => {
-    
-    console.log('delete request received')
-})
+app.post('/api/posts', (req, res) => {
+    const { username, thoughts } = req.body;
+    addPost(username, thoughts);
+    res.json({ message: 'Post added' });
+});
 
-//route to update posts database
-
-app.post('/api/posts', (req,res) => {
- //grab input
- const {username,thoughts}  = req.body
- console.log(username,thoughts)
- //add user
- addPosts(username,thoughts)
- //output confirmation
- res.json({message: 'user added'})
-})
+app.delete('/api/posts', (req, res) => {
+    posts.length = 0;
+    res.json({ message: 'All posts deleted' });
+});
