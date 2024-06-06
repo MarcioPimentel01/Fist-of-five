@@ -4,9 +4,11 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const htmlRoutes = require('./public/routes/htmlroutes');
 
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use("/", htmlRoutes);
+
 
 const posts = [];
 

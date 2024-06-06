@@ -5,6 +5,7 @@
 //! This file is exported as the 'router' module and can be used to define other routes.
 //!this file will take the signup route and send it to the controller, and controller will send it to the model.
 
+
 const { signup } = require('../controller/authController')
 
 const router = require('express').Router()
@@ -12,4 +13,3 @@ const router = require('express').Router()
 router.route(`/signup`).post(signup)
 
 module.exports = router
-
