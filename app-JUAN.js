@@ -3,6 +3,8 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const htmlRoutes = require('./public/routes/htmlroutes');
+require('dotenv').config();
+console.log(process.env)
 
 
 app.use(express.static(path.join(__dirname, 'public')));
