@@ -1,0 +1,130 @@
+.status-menu {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.status-menu-item {
+    text-decoration: none;
+    color: #ccc8db;
+    padding: 10px 14px;
+    line-height: 0.7;
+    font-family: 'Arial', sans-serif; /* Update with actual font name */
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+.status-menu-item.active,
+.status-menu-item:hover {
+    background-color: #2e2e40;
+    color: #fff;
+}
+
+.status-menu-item + .status-menu-item {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .status-menu {
+        font-size: 14px;
+    }
+
+    .status-menu-item + .status-menu-item {
+        margin-left: 0;
+    }
+}
+
+.status-img {
+    max-width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.status-main {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc; /* Update with actual border color */
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* Album Styles */
+.album {
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.album-detail {
+    width: calc(100% - 110px);
+}
+
+.album-title span {
+    color: #1771d6;
+    cursor: pointer;
+}
+
+.album-date {
+    font-size: 15px;
+    color: #595c6c;
+    margin-top: 4px;
+}
+
+.album-content {
+    padding: 0 20px 20px;
+}
+
+.album-photo {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.album-photos {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-height: 30vh;
+}
+
+.album-photos > .album-photo {
+    width: 50%;
+}
+
+.album-right {
+    width: 50%;
+    margin-left: 10px;
+    line-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-photo {
+    height: calc(50% - 10px);
+}
+
+.album-actions {
+    padding: 0 20px 20px;
+}
+
+.album-action {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #a2a4b4;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.album-action:hover {
+    color: #fff;
+}
+
+.album-action svg {
+    width: 16px;
+    margin-right: 6px;
+}

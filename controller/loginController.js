@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
     delete user.password;
 // signs user object by creating hash and putting at as a signature at the end of the jwt
     const token = jwt.sign(user, process.env.MY_SECRET, { expiresIn: "1h" });
-
+// set cookie on response header
     res.cookie("token", token, {
         httpOnly: true
     });
