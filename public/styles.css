@@ -1,130 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(./images/web3.jpeg);
+    background-size: cover;
+}
+
+.box {
+    position: relative;
+    z-index: 1;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9); 
+}
+
+/* Status box styling */
+.status {
+    position: relative;
+    z-index: 2;
+    background-color: #1e1d1d;
+    color: #fff;
+    width: 30%; /* Adjusted width */
+    margin: 10px auto; /* Center the box */
+
+}
+
 .status-menu {
-    padding: 20px;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .status-menu-item {
+    margin: 0 10px;
     text-decoration: none;
-    color: #ccc8db;
-    padding: 10px 14px;
-    line-height: 0.7;
-    font-family: 'Arial', sans-serif; /* Update with actual font name */
-    font-weight: 500;
-    border-radius: 20px;
+    color: #ccc;
 }
 
-.status-menu-item.active,
-.status-menu-item:hover {
-    background-color: #2e2e40;
-    color: #fff;
-}
-
-.status-menu-item + .status-menu-item {
-    margin-left: 10px;
-}
-
-@media screen and (max-width: 500px) {
-    .status-menu {
-        font-size: 14px;
-    }
-
-    .status-menu-item + .status-menu-item {
-        margin-left: 0;
-    }
-}
-
-.status-img {
-    max-width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 20px;
+.status-menu-item.active {
+    font-weight: bold;
 }
 
 .status-main {
-    padding: 0 20px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ccc; /* Update with actual border color */
-    padding-bottom: 20px;
-    flex-wrap: wrap;
+    margin: 10px 0;
 }
 
-/* Album Styles */
-.album {
-    padding-top: 20px;
-    margin-top: 20px;
+.status-img {
+   max-width: 100px;
+    margin-right: 10px;
 }
 
-.album-detail {
-    width: calc(100% - 110px);
+.status-textarea {
+    flex: 1;
+    padding: 5px;
 }
 
-.album-title span {
-    color: #1771d6;
+.status-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-action {
+    text-decoration: none;
+    color: #ccc;
+    margin-right: 10px;
+}
+
+.status-share {
+    padding: 5px 10px;
+    background-color: #ccc;
+    border: none;
+    color: #118edc;
     cursor: pointer;
 }
 
+/* Album box styling */
+.album {
+    position: relative;
+    z-index: 2;
+    background-color: #f2f2f2;
+    color: #333;
+    width: 30%; /* Adjusted width */
+    margin: 10px auto; /* Center the box */
+    padding: 10px;
+}
+
+.album-detail {
+    margin-bottom: 10px;
+}
+
+.album-title {
+    color: #333;
+}
+
+.album-title strong {
+    color: #551a8b; /* Purple color */
+}
+
 .album-date {
-    font-size: 15px;
-    color: #595c6c;
-    margin-top: 4px;
+    color: #777;
 }
 
 .album-content {
-    padding: 0 20px 20px;
-}
-
-.album-photo {
-    max-width: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 4px;
-    margin-top: 10px;
+    color: #333;
 }
 
 .album-photos {
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    max-height: 30vh;
 }
 
-.album-photos > .album-photo {
-    width: 50%;
+.album-photo {
+    max-width: 100px;
+    margin-right: 10px;
 }
 
 .album-right {
-    width: 50%;
-    margin-left: 10px;
-    line-height: 0;
     display: flex;
     flex-direction: column;
 }
 
-.album-photo {
-    height: calc(50% - 10px);
-}
-
 .album-actions {
-    padding: 0 20px 20px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .album-action {
-    margin-right: 20px;
     text-decoration: none;
-    color: #a2a4b4;
-    display: inline-flex;
-    align-items: center;
-    font-weight: 600;
-}
-
-.album-action:hover {
-    color: #fff;
-}
-
-.album-action svg {
-    width: 16px;
-    margin-right: 6px;
+    color: #333;
+    margin-right: 10px;
 }
