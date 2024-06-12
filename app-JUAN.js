@@ -1,56 +1,23 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3001;
-const htmlRoutes = require('./public/routes/htmlroutes');
-const cookieParser = require('cookie-parser');
-const loginRoute = require('/routes/loginroutes');
-require('dotenv').config();
-console.log(process.env)
 
-// Middleware for our application
-app.use(
-    express.urlencoded({
-       extended: true,
-    })
-);
-app.use(cookieParser());
-
+// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
-app.use("/", htmlRoutes);
-app.post("/login", loginRoute);
-// 
 
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
 
-const posts = [];
+// Route to render the login page
+app.get('/', (req, res) => {
+    res.render('index.ejs', {
+        backgroundUrl: '/images/2to1+-+GettyImages-1221309165_Geometric+abstract+background+with+connected+line+and+dots.jpeg',
+        headerImgUrl: '/images/nft.icon.png'
+    });
+});
 
-class Post {
-    constructor(username, thoughts) {
-        this.username = username;
-        this.thoughts = thoughts;
-    }
-}
-
-const addPost = (username, thoughts) => {
-    posts.push(new Post(username, thoughts));
-}
-
+// Start the server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Running on port ${PORT}`);
-});
-
-app.get('/api/posts', (req, res) => {
-    res.json(posts);
-});
-
-app.post('/api/posts', (req, res) => {
-    const { username, thoughts } = req.body;
-    addPost(username, thoughts);
-    res.json({ message: 'Post added' });
-});
-
-app.delete('/api/posts', (req, res) => {
-    posts.length = 0;
-    res.json({ message: 'All posts deleted' });
+    console.log(`Server is running on port ${PORT}`);
 });

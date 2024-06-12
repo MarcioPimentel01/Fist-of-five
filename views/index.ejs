@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Login</title>
+    <style>
+        body {
+            background-image: url("<%= backgroundUrl %>");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-size: cover;
+            margin: 0;
+        }
+        .login {
+            padding: 40px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 5px;
+            box-shadow: 1px 1px 20px cyan;
+            text-align: center;
+        }
+        img {
+            width: 80px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 15px cyan;
+        }
+        .field {
+            margin-bottom: 15px;
+        }
+        .field span {
+            color: white;
+            width: 40px;
+            line-height: 45px;
+            text-align: center;
+        }
+        .field input {
+            width: 100%;
+            height: 45px;
+            font-size: 1.1rem;
+            padding: 5px;
+            color: cyan;
+            background-color: transparent;
+            border: none;
+        }
+        .forgot-password {
+            margin-bottom: 15px;
+        }
+        .forgot-password a {
+            color: white;
+            text-decoration: none;
+        }
+        .submit {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 45px;
+            margin-bottom: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2rem;
+            color: white;
+            background-color: transparent;
+            border: 1px solid cyan;
+        }
+        .submit:hover {
+            cursor: pointer;
+            background-color: rgba(13, 16, 61);
+        }
+        .login-form-copy {
+            text-decoration: none;
+            color: rgb(18, 190, 190);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 5px;
+        }
+        .social-icon {
+            display: inline-block;
+            font-size: 1.4rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+        .instagram {
+            background: linear-gradient(rgb(243, 5, 171), rgb(205,95,4), yellow);
+        }
+        .facebook {
+            color: #385998;
+        }
+        .twitter {
+            background-color: #00acee;
+        }
+        .google {
+            background-color: #ca3224;
+        }
+        .linkedin {
+            background-color: #0e76ab;
+        }
+    </style>
+</head>
+<body>
+    <form action="" class="login">
+        <header><img src="<%= headerImgUrl %>"></header>
+
+        <div class="field"><span class="fa fa-user"></span><input type="text" placeholder="Email or Username" required></div>
+        <div class="field"><span class="fa fa-lock"></span><input type="password" placeholder="Password" required></div>
+        <div class="forgot-password"><a href="#">Forgot password</a></div>
+        <input type="submit" class="submit" value="LOGIN">
+        <span class="login-form-copy">Or Login with</span>
+        <div class="social-icons">
+            <div class="social-icon instagram"><span class="fa fa-instagram"></span></div>
+            <div class="social-icon facebook"><span class="fa fa-facebook"></span></div>
+            <div class="social-icon google"><span class="fa fa-google"></span></div>
+            <div class="social-icon linkedin"><span class="fa fa-linkedin"></span></div>
+            <div class="social-icon twitter"><span class="fa fa-twitter"></span></div>
+        </div>
+        <span class="login-form-copy">Don't have any account? <a href="" class="login-form_sign-up">Sign up</a></span>
+    </form>
+</body>
+</html>
+
