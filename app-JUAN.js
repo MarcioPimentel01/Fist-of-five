@@ -62,10 +62,12 @@ const { sequelize, initModels } = require('./models'); // Ensure this path is co
 const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/postRoutes');
 const authRoutes = require('./routes/authRoutes');
+const audioRoutes = require('./routes/audioRoutes');
 const cors = require('cors');
 
 const app = express();
 
+app.use('/audioRoutes', audioRoutes);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
