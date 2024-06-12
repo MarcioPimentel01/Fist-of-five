@@ -125,4 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Time of song
     audio.addEventListener('timeupdate', DurTime);
+
 });
+module.exports = audioController;
