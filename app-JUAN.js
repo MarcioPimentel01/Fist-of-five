@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const htmlRoutes = require('./public/routes/htmlroutes');
 const cookieParser = require('cookie-parser');
-const loginRoute = require('public/routes/loginroutes');
+const loginRoute = require('/routes/loginroutes');
 require('dotenv').config();
 console.log(process.env)
 
