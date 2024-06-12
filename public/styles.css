@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -132,3 +135,124 @@ body {
     color: #333;
     margin-right: 10px;
 }
+* {
+    box-sizing: border-box;
+  }
+  
+
+  .music-container {
+    background-color: #d9cece;
+    border-radius: 15px;
+    box-shadow: 0 20px 20px 0 rgb(251 239 239 / 60%);
+    display: flex;
+    padding: 20px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
+    width: 400px;
+    left: 1050px;
+    bottom: 300px;
+    opacity: 60%;
+    border: 4px solid transparent;
+    border: 5px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 20px 20px 0 rgb(251 239 239 / 60%);
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #551a8b;
+    }
+    100% {
+        border-color: transparent;
+    }
+}
+  
+  .img-container {
+    position: relative;
+    width: 110px;
+      top: 30px;
+  }
+  
+  .img-container::after {
+    content: '';
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, 50%);
+  }
+  
+  .img-container img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 110px;
+    width: inherit;
+    position: absolute;
+    bottom: 85px;
+    left: 60px;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+  }
+  
+  .music-container.play .img-container img {
+    animation-play-state: running;
+  }
+  
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Changed from center to space-between */
+    z-index: 1;
+    width: 100%; /* Added width 100% */
+  }
+  
+  .song-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .progress-container {
+    background: #9d4caa;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100px; 
+  }
+  
+  .progress {
+    border-radius: 5px;
+    height: 100%;
+    width: 50%; /* Adjusted initial width */
+    transition: width 0.1s linear;
+  }
+  
+  .action-btn {
+    background-color: #612065;
+    border: 0;
+    color: #dfdbdf;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 0px;
+      height: 40px;
+      position: relative;
+      top: 50px;
+      left: -70px;
+      
+  }
+  
+  .action-btn.action-btn-big {
+    color: #cdc2d0;
+    font-size: 30px;
+  }
