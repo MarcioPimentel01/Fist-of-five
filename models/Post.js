@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const User = require('./User'); // Import User model
-const { formatDateTo12Hour } = require('../utils');
 
 
 const Post = sequelize.define('Post', {
@@ -24,5 +23,8 @@ const Post = sequelize.define('Post', {
 }, {
   timestamps: true,
 });
+
+Post.belongsTo(User, { foreignKey: 'userId' });
+User.hasMany(Post, { foreignKey: 'userId' });
 
 module.exports = Post;
