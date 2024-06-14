@@ -113,6 +113,8 @@ app._router.stack.forEach((middleware) => {
   }
 });
 
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
