@@ -2,7 +2,7 @@
   "name": "fist-of-five",
   "version": "1.0.0",
   "description": "This project is the second assignment in the Full Stack UCF Bootcamp. The objective of this project is to develop a social media application that initially supports text-based posts and is designed to accommodate NFT-based posts in the future. The app is built using the following technologies and frameworks:",
-  "main": "index.js",
+  "main": "index.ejs",
   "scripts": {
     "start:dev": "nodemon app.js"
   },
@@ -12,6 +12,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.12.0",
