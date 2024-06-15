@@ -1,6 +1,5 @@
-require('dotenv').config();
 const { Sequelize } = require('sequelize');
- // Load environment variables from .env file
+require('dotenv').config(); // Load environment variables from .env file
 
 console.log(`POSTGRESURL: ${process.env.POSTGRESURL}`); // Debugging line to ensure POSTGRESURL is loaded
 
