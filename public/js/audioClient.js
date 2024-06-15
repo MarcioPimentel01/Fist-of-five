@@ -48,26 +48,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Previous song
         function prevSong() {
             songIndex--;
-    
             if (songIndex < 0) {
                 songIndex = songs.length - 1;
             }
-    
             loadSong(songs[songIndex]);
-    
             playSong();
         }
     
         // Next song
         function nextSong() {
             songIndex++;
-    
             if (songIndex > songs.length - 1) {
                 songIndex = 0;
             }
-    
             loadSong(songs[songIndex]);
-    
             playSong();
         }
     
@@ -83,17 +77,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const width = this.clientWidth;
             const clickX = e.offsetX;
             const duration = audio.duration;
-    
             audio.currentTime = (clickX / width) * duration;
         }
     
         // Get duration & currentTime for Time of song
         function DurTime() {
-            const { duration, currentTime } = audio;
-            let min = Math.floor(currentTime / 60);
-            let sec = Math.floor(currentTime % 60);
-            let min_d = Math.floor(duration / 60);
-            let sec_d = Math.floor(duration % 60);
+            const min = Math.floor(audio.currentTime / 60);
+            const sec = Math.floor(audio.currentTime % 60);
+            const min_d = Math.floor(audio.duration / 60);
+            const sec_d = Math.floor(audio.duration % 60);
     
             currTime.innerHTML = `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
             durTime.innerHTML = `${min_d < 10 ? '0' + min_d : min_d}:${sec_d < 10 ? '0' + sec_d : sec_d}`;
@@ -108,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 playSong();
             }
+            nextBtn.addEventListener('click', nextSong);
         });
     
         // Change song
@@ -115,7 +108,10 @@ document.addEventListener('DOMContentLoaded', function() {
         nextBtn.addEventListener('click', nextSong);
     
         // Time/song update
-        audio.addEventListener('timeupdate', updateProgress);
+        audio.addEventListener('timeupdate', () => {
+            updateProgress();
+            DurTime();
+        });
     
         // Click on progress bar
         progressContainer.addEventListener('click', setProgress);
@@ -124,8 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         audio.addEventListener('ended', nextSong);
     
         // Time of song
-        audio.addEventListener('timeupdate', DurTime);
-    
+        audio.addEventListener('canplay', updateProgress);
     });
     module.exports = audioController;
     
