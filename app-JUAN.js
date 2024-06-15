@@ -60,6 +60,7 @@ const express = require('express');
 const path = require('path');
 const { sequelize, initModels } = require('./models'); // Ensure this path is correct
 const bodyParser = require('body-parser');
+const bcyrptjs = require('bcryptjs');
 const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/postRoutes');
 const authRoutes = require('./routes/authRoutes');
@@ -96,7 +97,7 @@ app.use('/api/audio', audioRoutes);
 
 // Route to render the login page
 app.get('/', (req, res) => {
-  res.render('views/index', {
+  res.render('index', {
       backgroundUrl: '/images/2to1+-+GettyImages-1221309165_Geometric+abstract+background+with+connected+line+and+dots.jpeg',
       headerImgUrl: '/images/nft.icon.png'
   });
