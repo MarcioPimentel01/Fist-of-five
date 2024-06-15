@@ -3,4 +3,4 @@ services:
     name: my-web-service
     env: node
     buildCommand: 'npm install'
-    startCommand: 'node app-JUAN.js'
+    startCommand: 'node app.js'
