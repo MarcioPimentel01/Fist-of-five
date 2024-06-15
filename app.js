@@ -37,6 +37,17 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/signup.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'signup.html'));
+});
+
+app.get('/login', (req, res) => {
+  res.render('index', {
+    backgroundUrl: '/images/2to1+-+GettyImages-1221309165_Geometric+abstract+background+with+connected+line+and+dots.jpeg',
+    headerImgUrl: '/images/nft.icon.png'
+  });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);

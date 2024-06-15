@@ -103,11 +103,18 @@
         }
     </style>
 </head>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Your existing CSS */
+    </style>
+</head>
 <body>
-    <form action="" class="login">
+    <form action="/api/auth/login" method="post" class="login">
         <header><img src="<%= headerImgUrl %>" alt="Header Image"></header>
-        <div class="field"><span class="fa fa-user"></span><input type="text" placeholder="Email or Username" required></div>
-        <div class="field"><span class="fa fa-lock"></span><input type="password" placeholder="Password" required></div>
+        <div class="field"><span class="fa fa-user"></span><input type="text" placeholder="Email or Username" name="username" required></div>
+        <div class="field"><span class="fa fa-lock"></span><input type="password" placeholder="Password" name="password" required></div>
         <div class="forgot-password"><a href="#">Forgot password</a></div>
         <input type="submit" class="submit" value="LOGIN">
         <span class="login-form-copy">Or Login with</span>
@@ -122,3 +129,4 @@
     </form>
 </body>
 </html>
+
