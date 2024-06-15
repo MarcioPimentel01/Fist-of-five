@@ -1,9 +1,14 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config(); // Load environment variables from .env file
 
-console.log(`POSTGRESURL: ${process.env.POSTGRESURL}`); // Debugging line to ensure POSTGRESURL is loaded
+const POSTGRESURL = process.env.POSTGRESURL;
+console.log(`POSTGRESURL: ${POSTGRESURL}`); // Debugging line to ensure POSTGRESURL is loaded
 
-const sequelize = new Sequelize(process.env.POSTGRESURL, {
+if (!POSTGRESURL) {
+  throw new Error("POSTGRESURL environment variable is not set");
+}
+
+const sequelize = new Sequelize(POSTGRESURL, {
   dialect: 'postgres',
   dialectOptions: {
     ssl: {
