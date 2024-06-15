@@ -10,6 +10,7 @@ if (!POSTGRESURL) {
 
 const sequelize = new Sequelize(POSTGRESURL, {
   dialect: 'postgres',
+  protocol: 'postgres',
   dialectOptions: {
     ssl: {
       require: true,
