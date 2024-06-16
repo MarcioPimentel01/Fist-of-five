@@ -20,14 +20,20 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
+// Test the database connection
+sequelize.authenticate()
+  .then(() => console.log('Database connected...'))
+  .catch(err => console.log('Error: ' + err));
+
+
 // Sync database and initialize models
 initModels();
 
-app.use(cors());
-app.use('/api/users', userRoutes);
-app.use('/api/posts', postRoutes);
+// app.use(cors());
+// app.use('/api/users', userRoutes);
+// app.use('/api/posts', postRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api/audio', audioRoutes);
+// app.use('/api/audio', audioRoutes);
 
 // Route to render the login page
 app.get('/', (req, res) => {
