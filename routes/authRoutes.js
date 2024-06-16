@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
 
       if (isValid) {
         // Redirect to post.html after successful login
-        res.redirect('/post.html'); // Ensure this path is correct
+        res.redirect('/posts.html'); // Ensure this path is correct
       } else {
         res.send('Invalid username or password. <a href="/login">Try again</a>.');
       }
