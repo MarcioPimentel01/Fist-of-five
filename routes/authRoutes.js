@@ -24,8 +24,8 @@ router.post('/signup', async (req, res) => {
     // Create new user
     await User.create({ username, password: hashedPassword });
 
-    // Redirect or respond with success message
-    res.send('Signup successful! Please <a href="/login">login</a>.');
+   // Redirect to login page after successful signup
+   res.redirect('/login');
   } catch (err) {
     console.error('Error during user signup:', err); // Log detailed error
     if (err.name === 'SequelizeUniqueConstraintError') {
@@ -35,5 +35,32 @@ router.post('/signup', async (req, res) => {
     }
   }
 });
+
+// Login route handler
+router.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const user = await User.findOne({ where: { username } });
+
+    if (user) {
+      const isValid = await bcryptjs.compare(password, user.password);
+
+      if (isValid) {
+        res.send('Login successful! Redirecting...'); // You can redirect here or send a success message
+      } else {
+        res.status(401).send('Invalid username or password. <a href="/login">Try again</a>.');
+      }
+    } else {
+      res.status(401).send('Invalid username or password. <a href="/login">Try again</a>.');
+    }
+  } catch (err) {
+    console.error('Error during user login:', err); // Log detailed error
+    res.status(500).send('An error occurred. Please <a href="/login">try again</a>.');
+  }
+});
+
+module.exports = router;
+
 
 module.exports = router;
