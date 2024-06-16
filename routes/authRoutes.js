@@ -47,20 +47,19 @@ router.post('/login', async (req, res) => {
       const isValid = await bcryptjs.compare(password, user.password);
 
       if (isValid) {
-        res.send('Login successful! Redirecting...'); // You can redirect here or send a success message
+        // Redirect to post.html after successful login
+        res.send('Login successful! Redirecting...');
+        res.redirect('/post.html'); // Ensure this path is correct
       } else {
-        res.status(401).send('Invalid username or password. <a href="/login">Try again</a>.');
+        res.send('Invalid username or password. <a href="/login">Try again</a>.');
       }
     } else {
-      res.status(401).send('Invalid username or password. <a href="/login">Try again</a>.');
+      res.send('Invalid username or password. <a href="/login">Try again</a>.');
     }
   } catch (err) {
     console.error('Error during user login:', err); // Log detailed error
-    res.status(500).send('An error occurred. Please <a href="/login">try again</a>.');
+    res.send('An error occurred. Please <a href="/login">try again</a>.');
   }
 });
-
-module.exports = router;
-
 
 module.exports = router;

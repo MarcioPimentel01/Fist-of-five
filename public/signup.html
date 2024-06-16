@@ -74,6 +74,9 @@
     <label for="password-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="password-repeat" required>
 
+    <div id="password-error" class="error" style="display: none;">Passwords do not match</div>
+
+
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
@@ -85,5 +88,23 @@
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
   </form>
+
+  <script>
+    // JavaScript to check if passwords match before form submission
+    const form = document.querySelector('.container');
+
+    form.addEventListener('submit', function(event) {
+      const password = form.querySelector('input[name="password"]').value;
+      const passwordRepeat = form.querySelector('input[name="password-repeat"]').value;
+      const passwordError = document.getElementById('password-error');
+
+      if (password !== passwordRepeat) {
+        passwordError.style.display = 'block';
+        event.preventDefault(); // Prevent form submission
+      } else {
+        passwordError.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
