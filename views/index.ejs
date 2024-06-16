@@ -103,13 +103,6 @@
         }
     </style>
 </head>
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        /* Your existing CSS */
-    </style>
-</head>
 <body>
     <form action="/api/auth/login" method="post" class="login">
         <header><img src="<%= headerImgUrl %>" alt="Header Image"></header>
@@ -127,6 +120,15 @@
         </div>
         <span class="login-form-copy">Don't have any account? <a href="/signup.html" class="login-form_sign-up">Sign up</a></span>
     </form>
+    <script>
+        // Handle redirect after login success
+        const messageElement = document.querySelector('.message');
+        if (messageElement && messageElement.textContent.includes('Login successful!')) {
+            setTimeout(() => {
+                window.location.href = '/post.html'; // Redirect to post.html
+            }, 3000); // Redirect after 3 seconds (adjust as needed)
+        }
+    </script>
 </body>
 </html>
 
