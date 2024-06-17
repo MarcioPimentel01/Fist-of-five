@@ -1,9 +1,9 @@
 
 # Project Title
 
-This project is the second assignment in the Full Stack UCF Bootcamp. The objective of this project is to develop a social media application that initially supports text-based posts and is designed to accommodate NFT-based posts in the future. Users will be able to discuss all things related to blockchain in messages & a social forum environment. Users can leave the web 2.0 platform to dive into a web 3.0 portal that gives them access to fun web 3 games and dapps (decentralized applications). The app is built using the following technologies and frameworks:
+This project is the second assignment in the Full Stack UCF Bootcamp. The objective of this project is to develop a social media application that initially supports text-based posts and is designed to accommodate NFT-based posts in the future. Users will be able to discuss all things related to blockchain in messages & a social forum environment. Users can leave the web 2.0 platform to dive into a web 3.0 portal that gives them access to fun web 3 games and dapps (decentralized applications) on the block chain. The app is built using the following technologies and frameworks:
 
-**Backend**: Node.js, Express.js, Solidity
+**Backend**: Node.js, Express.js, Solidity, Thirdweb Engine
 
 <p align="left">
   <!-- Node.js Icon and Link -->
@@ -13,6 +13,9 @@ This project is the second assignment in the Full Stack UCF Bootcamp. The object
   </p>
   <a href="https://soliditylang.org/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/color-glass/70/solidity.png" width="40" height="40" alt="Express.js" /></a>
   </p>
+      <img src="https://firebase-auth.thirdweb-example.com/thirdweb.png" width="40" height="40" alt="Thirdweb" />
+</p>
+  
 
 
 **Database**: PostgreSQL with Sequelize ORM
