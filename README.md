@@ -3,6 +3,11 @@
 
 This project is the second assignment in the Full Stack UCF Bootcamp. The objective of this project is to develop a social media application that initially supports text-based posts and is designed to accommodate NFT-based posts in the future. Users will be able to discuss all things related to blockchain in messages & a social forum environment. Users can leave the web 2.0 platform to dive into a web 3.0 portal that gives them access to fun web 3 games and dapps (decentralized applications) on the block chain. The app is built using the following technologies and frameworks:
 
+**Frontend**: CSS, Tailwind CSS
+<p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png" width="40" height="40" alt="Tailwind CSS" 
+</p>
+
 **Backend**: Node.js, Express.js, Solidity, Thirdweb Engine
 
 <p align="left">
@@ -49,6 +54,8 @@ While we are aware that there are other technologies and frameworks that could p
 `Text Posts:` Users can create, read, update, and delete text-based posts.
 
 `NFT-ready:` The application is designed to handle NFT-based posts in future updates.
+
+`Web 3.0 Games:` Interopable games that allow users to transfer NFT tokens & crypto assets across multiple platforms/games in future updates.
 
 `RESTful API:` A well-structured API to handle all data interactions between the client and server.
 
