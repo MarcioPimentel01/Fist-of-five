@@ -1,4 +1,3 @@
-// public/script.js
 
 document.getElementById('shareButton').addEventListener('click', async () => {
     const thoughts = document.getElementById('thoughts').value;
@@ -34,20 +33,24 @@ async function loadPosts() {
         if (response.ok) {
             const posts = result;
             const postsContainer = document.getElementById('postsContainer');
-            postsContainer.innerHTML = posts.map(post => `
-                <div class="album box">
-                    <div class="status-main">
-                        <div class="album-detail">
-                            <div class="album-title"><strong>${post.username}</strong> created a new <span>Post</span></div>
-                            <div class="album-date">${new Date(post.createdAt).toLocaleString()}</div>
+            
+            postsContainer.innerHTML = posts.map(post => {
+                const localTime = new Date(post.createdAt).toLocaleString();
+                return `
+                    <div class="album box">
+                        <div class="status-main">
+                            <div class="album-detail">
+                                <div class="album-title"><strong>${post.username}</strong> created a new <span>Post</span></div>
+                                <div class="album-date">${localTime}</div>
+                            </div>
+                        </div>
+                        <div class="album-content">${post.thoughts}</div>
+                        <div class="album-actions">
+                            <button onclick="deletePost(${post.id})">Delete</button>
                         </div>
                     </div>
-                    <div class="album-content">${post.thoughts}</div>
-                    <div class="album-actions">
-                        <button onclick="deletePost(${post.id})">Delete</button>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         } else {
             alert('Error: ' + result.message);
         }
