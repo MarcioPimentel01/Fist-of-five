@@ -55,7 +55,6 @@ body::before {
     color: #fff;
     width: 30%; /* Adjusted width */
     margin: 10px auto; /* Center the box */
-
 }
 
 .status-menu {
@@ -164,11 +163,11 @@ body::before {
     color: #333;
     margin-right: 10px;
 }
+
 * {
     box-sizing: border-box;
   }
   
-
   .music-container {
     background-color: #d9cece;
     border-radius: 15px;
@@ -206,7 +205,6 @@ body::before {
     width: 110px;
       top: 30px;
   }
-
   
   .img-container img {
     border-radius: 0%;
@@ -224,7 +222,6 @@ body::before {
     animation-play-state: running;
   }
   
-
   .navigation {
     display: flex;
     align-items: center;
@@ -271,18 +268,19 @@ body::before {
       position: relative;
       top: 44px;
       left: -70px;
-      
   }
   
   .action-btn.action-btn-big {
     color: #cdc2d0;
     font-size: 30px;
   }
-.music-info h4{
+
+.music-info h4 {
     position: relative;
     left: 145px;
-    top: -20px
+    top: -20px;
 }
+
 .avatar-container {
     position: fixed;
     top: 15px;
@@ -319,9 +317,15 @@ body::before {
     }
 }
 
-
 .username {
     margin-top: 5px;
     font-weight: bold;
     color: #0a080a;
+}
+
+.post-container {
+    max-height: 500px; /* Adjust this value as needed */
+    overflow-y: scroll;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
 }
