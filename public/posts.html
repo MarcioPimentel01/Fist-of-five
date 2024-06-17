@@ -4,82 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Posts</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<header>
 
+    <nav class="flex items-center justify-between py-4 px-8 bg-gradient-to-r from-purple-900 to-black">
+        <div>
+            <a href="#" class="text-white text-2xl font-bold">Logo</a>
+        </div>
+        <div>
+            <ul class="flex space-x-6 text-white">
+                <li><a href="#" class="hover:text-neon-purple">Web 3 games</a></li>
+                <li><a href="#" class="hover:text-neon-purple">Dapps</a></li>
+                <li><a href="#" class="hover:text-neon-purple">Dashboard</a></li>
+                <li class="relative">
+                    <a href="#" class="hover:text-neon-purple">Social Links</a>
+                    <ul class="dropdown-menu absolute right-0 mt-2 w-40 bg-purple-700 rounded-lg shadow-lg hidden">
+                        <li><a href="#" class="block px-4 py-2 text-white hover:bg-purple-800">Messages</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <a href="./signup.html" class="bg-purple-700 text-white py-2 px-4 rounded-lg hover:bg-purple-800">Sign Up</a>
+            <a href="#" class="bg-blue-700 text-white py-2 px-4 rounded-lg hover:bg-blue-800">Login</a>
+        </div>
+    </nav>
+</header>
 
 <body>
-  <div class="status box">
-    <div class="status-menu">
-      <a class="status-menu-item active" href="#">Status</a>
-      <a class="status-menu-item" href="#">Photos</a>
-      <a class="status-menu-item" href="#">Videos</a>
-    </div>
-    <div class="status-main">
-      <img src="" class="status-img" />
-      <textarea id="thoughts" class="status-textarea" placeholder="Write something you would like to share.."></textarea>
-    </div>
-    <div class="status-actions">
-      <a href="#" class="status-action">
-        <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="-42 0 512 512">
-          <!-- SVG content here -->
-        </svg>
-        People
-      </a>
-      <a href="#" class="status-action">
-        <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <!-- SVG content here -->
-        </svg>
-        Check in
-      </a>
-      <a href="#" class="status-action">
-        <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <!-- SVG content here -->
-        </svg>
-        Mood
-      </a>
-      <button id="shareButton" class="status-share">Share</button>
-    </div>
-  </div>
 
-  <div id="postsContainer"></div>
-
-  <div class="img-container">
-    <img src="./images/electronicdreams77.jpg" alt="music-cover" id="cover" />
-  </div>
-
-  <div class="avatar-container">
-    <div class="avatar">
-      <img src="./images/pacificrim.jpg" alt="Avatar" class="avatar-img">
-      <div class="username"></div>
+    <div class="status box">
+        <div class="status-menu">
+            <a class="status-menu-item active" href="#">Status</a>
+            <a class="status-menu-item" href="#">Photos</a>
+            <a class="status-menu-item" href="#">Videos</a>
+        </div>
+        <div class="status-main">
+            <img src="" class="status-img" />
+            <textarea id="thoughts" class="status-textarea" placeholder="Write something you would like to share.."></textarea>
+        </div>
+        <div class="status-actions">
+            <a href="#" class="status-action">
+                <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="-42 0 512 512">
+                  <!-- SVG content here -->
+                </svg>
+                People
+            </a>
+            <a href="#" class="status-action">
+                <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!-- SVG content here -->
+                </svg>
+                Check in
+            </a>
+            <a href="#" class="status-action">
+                <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!-- SVG content here -->
+                </svg>
+                Mood
+            </a>
+            <button id="shareButton" class="status-share">Share</button>
+        </div>
     </div>
-  </div>
 
-  <!-- music player -->
-  <div class="music-container">
-    <div class="music-info">
-      <h4 id="title">Lost in a Maze</h4>
-      <div class="progress-container">
-        <div class="progress"></div>
-      </div>
+    <div id="postsContainer"></div>
+
+    <div id="musicPlayerContainer">
+        <div class="img-container">
+            <img src="./images/electronicdreams77.jpg" alt="music-cover" id="cover" />
+        </div>
+
+        <div class="avatar-container">
+            <div class="avatar">
+                <img src="./images/pacificrim.jpg" alt="Avatar" class="avatar-img">
+                <div class="username"></div>
+            </div>
+        </div>
+
+        <!-- music player -->
+        <div class="music-container">
+            <div class="music-info">
+                <h4 id="title">Lost in a Maze</h4>
+                <div class="progress-container">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <audio src="./music/Lost in a Maze.mp3" id="audio"></audio>
+            <audio src="./music/Day Dreams.mp3" id="audio1"></audio>
+            <div class="navigation"></div>
+            <button id="prev" class="action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
     </div>
-    <audio src="./music/Lost in a Maze.mp3" id="audio"></audio>
-    <audio src="./music/Day Dreams.mp3" id="audio1"></audio>
-    <div class="navigation"></div>
-    <button id="prev" class="action-btn">
-      <i class="fas fa-backward"></i>
-    </button>
-    <button id="play" class="action-btn">
-      <i class="fas fa-play"></i>
-    </button>
-    <button id="next" class="action-btn">
-      <i class="fas fa-forward"></i>
-    </button>
-  </div>
 
-  <script src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
-
-
