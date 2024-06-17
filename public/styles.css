@@ -1,3 +1,9 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +12,8 @@ body {
     background-size: cover;
     position: relative;
     overflow: hidden; /* Added to prevent horizontal scroll */
+    background-position: top center;
+    padding-top: 100;
 }
 
 body::before {
@@ -16,7 +24,7 @@ body::before {
     right: 0;
     bottom: 0;
     background: linear-gradient(to top, #00f, transparent);
-    z-index: -1;
+    z-index: -1; /* Change z-index value */
     animation: neon-animation 2s infinite;
 }
 
@@ -52,7 +60,7 @@ body::before {
     position: relative;
     z-index: 2;
     background-color: #1e1d1d;
-    color: #fff;
+    color: #020202;
     width: 30%; /* Adjusted width */
     margin: 10px auto; /* Center the box */
 }
@@ -86,6 +94,7 @@ body::before {
 .status-textarea {
     flex: 1;
     padding: 5px;
+    z-index: 1; 
 }
 
 .status-actions {
@@ -178,8 +187,9 @@ body::before {
     margin: 100px 0;
     z-index: 10;
     width: 400px;
+    height: 120px;
     left: 550px;
-    bottom: -200px;
+    bottom: -250px;
     opacity: 60%;
     border: 4px solid transparent;
     border: 5px solid transparent;
@@ -203,7 +213,7 @@ body::before {
   .img-container {
     position: relative;
     width: 110px;
-      top: 30px;
+      top: -20px;
   }
   
   .img-container img {
@@ -212,7 +222,7 @@ body::before {
     height: 90px;
     width: 100px;
     position: absolute;
-    bottom: -370px;
+    bottom: -380px;
     left: 600px;
     animation: rotate 3s linear infinite;
     animation-play-state: paused;
@@ -225,9 +235,9 @@ body::before {
   .navigation {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Changed from center to space-between */
+    justify-content: space-between; 
     z-index: 1;
-    width: 100%; /* Added width 100% */
+    width: 100%; 
   }
   
   .song-details {
@@ -244,7 +254,7 @@ body::before {
     height: 4px;
     width: 116px; 
     left: 145px;
-    top: -30px;
+    top: 0px;
     position: relative;
   }
   
@@ -278,7 +288,7 @@ body::before {
 .music-info h4 {
     position: relative;
     left: 145px;
-    top: -20px;
+    top: 0px;
 }
 
 .avatar-container {
@@ -296,6 +306,9 @@ body::before {
 .avatar-img {
     width: 100px;
     height: 100px;
+    top: 70px;
+    left: -35px;
+    position: relative;
     border-radius: 50%;
     border: 2px solid #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -328,4 +341,17 @@ body::before {
     overflow-y: scroll;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.8);
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    z-index: 1001; /* Updated z-index to be higher than the background image */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 60px;
 }
