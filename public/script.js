@@ -34,8 +34,11 @@ async function loadPosts() {
         const response = await fetch('/api/posts');
         const result = await response.json();
 
-        if (response.ok) {
-            const posts = result;
+        if (result.status === 'success') {
+            const posts = result.data;
+            if (!Array.isArray(posts)) {
+                throw new TypeError('Expected posts to be an array');
+            }
             const postsContainer = document.getElementById('postsContainer');
             postsContainer.innerHTML = posts.map(post => `
                 <div class="album box">
