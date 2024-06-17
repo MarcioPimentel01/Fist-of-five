@@ -12,6 +12,12 @@ const cors = require('cors');
 
 const app = express();
 
+// Sample posts data
+let posts = [
+  { id: 1, username: 'JohnDoe', content: 'This is a sample post' },
+  { id: 2, username: 'JaneSmith', content: 'Another post by Jane' }
+];
+
 // Middleware setup
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -34,6 +40,11 @@ app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/audio', audioRoutes);
+
+// API route to fetch posts
+app.get('/api/posts', (req, res) => {
+  res.json(posts);
+});
 
 // Route to render the login page
 app.get('/', (req, res) => {
@@ -68,3 +79,4 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
