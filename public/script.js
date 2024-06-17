@@ -34,8 +34,8 @@ async function loadPosts() {
         const response = await fetch('/api/posts');
         const result = await response.json();
 
-        if (result.status === 'success') {
-            const posts = result.data;
+        if (response.ok) {
+            const posts = result;
             const postsContainer = document.getElementById('postsContainer');
             postsContainer.innerHTML = posts.map(post => `
                 <div class="album box">
