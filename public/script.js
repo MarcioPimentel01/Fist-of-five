@@ -1,4 +1,4 @@
-
+// public/script.js
 document.getElementById('shareButton').addEventListener('click', async () => {
     const thoughts = document.getElementById('thoughts').value;
     const userId = 1; // Replace with the logged-in user's ID (you may need to get this dynamically)
@@ -30,8 +30,8 @@ async function loadPosts() {
         const response = await fetch('/api/posts');
         const result = await response.json();
 
-        if (response.ok) {
-            const posts = result;
+        if (result.status === 'success') {
+            const posts = result.data;
             const postsContainer = document.getElementById('postsContainer');
             
             postsContainer.innerHTML = posts.map(post => {
